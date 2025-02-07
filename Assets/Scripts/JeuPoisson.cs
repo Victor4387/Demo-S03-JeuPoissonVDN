@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JeuPoisson : MonoBehaviour
 {
@@ -20,9 +21,16 @@ public class JeuPoisson : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        temps += Time.deltaTime;
+        Debug.Log(temps);
         //Debug.Log(poidsSaumon);
         Vector3 deplacement = new Vector3(1f, 0f, 0f);
-        _sardine.transform.position += deplacement * Time.deltaTime;
+        _sardine.transform.position += deplacement * 4f * Time.deltaTime;
+    }
+
+    public void Redemarrer()
+    {
+        SceneManager.LoadScene();
     }
 
     public void ComparerPoissons()
