@@ -14,13 +14,15 @@ public class JeuPoisson : MonoBehaviour
     void Start()
     {
         //Debug.Log(poidsSaumon);
+        //_sardine.transform.position += new Vector3(1f, 0f, 0f);
     }
 
     // Update is called once per frame
     void Update()
     {
         //Debug.Log(poidsSaumon);
-
+        Vector3 deplacement = new Vector3(1f, 0f, 0f);
+        _sardine.transform.position += deplacement * Time.deltaTime;
     }
 
     public void ComparerPoissons()
